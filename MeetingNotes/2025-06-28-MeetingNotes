@@ -1,0 +1,40 @@
+
+# Profiles for rule engine
+
+Automatic identification of the developer profile for quality rules
+
+## Students
+	- Faniry RANDRIAMIHAJARIVO <faniryrandriamihajarivo@gmail.com>
+	- Anie Rakoto <anierakoto74@gmail.com>
+
+## Documents
+
+- Read the chapter 3 of https://yuriy.tymch.uk/papers/quality-aware-tooling.pdf
+	It will explain to you the new design of the rule engine of Pharo.
+
+- In Pharo check the rules in the package 'General-Rules'
+
+	https://speakerdeck.com/uko/when-qualityassistant-meets-pharo-enforced-code-critiques-motivate-more-valuable-rules-iwst2016?slide=65
+
+## Point to start looking at code. 
+- ReAbstractRule is the root of the rules. 
+I saw that there is already a class ReExclusivelyBeginnersRule but it has no subclass
+	
+A rule stating that True is not a correct value for the boolean true should be a good subclass of this class.
+This is a typically mistake made by beginners of Python dev.
+
+- StCritiqueBrowserPresenter open 
+is a separate tool made to select and execute rules on a given set of Package. 
+
+- Check the ReRuleManager since it seems that it should be a good place to use user profiles
+to only run some specific set of rules. 
+
+
+## Producing a little doc
+I would suggest that you first read a bit the chapter build a list of the rules available in Pharo (subclasses of ReAbstractRule)
+- Check the rules in the package 'General-Rules'
+- This will give a good overview. For each kind I would like one example. 
+- Then start to sketch a little documentation. What are the key classes.
+- We should be able to include it in Pharo under the doc folder.
+- Check for example the rewrite example https://github.com/pharo-project/pharo/tree/Pharo14/doc
+
